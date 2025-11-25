@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_practice/basics/sizedbox-widget.dart';
+import 'package:flutter_practice/basics/list_tile__widget_and_print_function.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: SizedBoxWidget(),
+      home: ListTileWidgetAndPrintFunction(),
     );
   }
 }
