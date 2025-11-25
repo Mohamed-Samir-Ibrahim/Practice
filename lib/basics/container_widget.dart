@@ -27,6 +27,7 @@ class _ContainerWidgetState extends State<ContainerWidget> {
         child: Container(
           height: 100,
           width: 100,
+          padding: EdgeInsets.all(8),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: Colors.red,
