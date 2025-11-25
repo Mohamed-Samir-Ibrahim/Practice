@@ -17,8 +17,8 @@ class _ImageWidgetState extends State<ImageWidget> {
         title: Text('Flutter'),
       ),
       body: Center(
-        child: Image.network(
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/500px-Cat_November_2010-1a.jpg',
+        child: Image.asset(
+          'assets/images/Cat_November_2010-1a.jpg',
         ),
       ),
     );
