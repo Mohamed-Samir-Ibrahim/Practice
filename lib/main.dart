@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_practice/basics/wrap_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -7,14 +6,13 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: WrapWidget(),
+      home: MyHomePage(title: 'MyHomePage'),
     );
   }
 }
@@ -22,6 +20,7 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
   final String title;
+  final int selectedIndex = 0;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -59,6 +58,23 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
+      ),
+      bottomNavigationBar: NavigationBar(
+        onDestinationSelected: (value) => print('Index is $value'),
+        selectedIndex: widget.selectedIndex,
+        destinations: [
+          NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
+          NavigationDestination(icon: Icon(Icons.person), label: 'Profile'),
+        ],
+      ),
+      drawer: Drawer(
+        child: Column(
+          children: [
+            DrawerHeader(child: Text('Header')),
+            ListTile(title: Text('Tile1')),
+            ListTile(title: Text('Tile2')),
+          ],
+        ),
       ),
     );
   }
