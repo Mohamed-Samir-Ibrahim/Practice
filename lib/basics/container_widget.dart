@@ -25,14 +25,19 @@ class _ContainerWidgetState extends State<ContainerWidget> {
       ),
       body: Center(
         child: Container(
-          height: 100,
-          width: 100,
-          padding: EdgeInsets.all(8),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            color: Colors.red,
+          height: 200,
+          width: 200,
+          color: Colors.blue,
+          child: Container(
+            height: 100,
+            width: 100,
+            margin: EdgeInsets.all(30),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: Colors.red,
+            ),
+            child: Text('Hello', style: TextStyle(color: Colors.white)),
           ),
-          child: Text('Hello', style: TextStyle(color: Colors.white)),
         ),
       ),
     );
