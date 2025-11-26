@@ -9,18 +9,80 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
   TextEditingController controller = TextEditingController();
-
+  bool isChecked = false;
+  bool isSwitched = false;
+  double sliderValue = 0.0;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Column(
-        children: [
-          TextField(
-            controller: controller,
-            decoration: InputDecoration(border: OutlineInputBorder()),
-          ),
-        ],
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            TextField(
+              controller: controller,
+              decoration: InputDecoration(border: OutlineInputBorder()),
+              onEditingComplete: () => controller,
+            ),
+            Text(controller.text),
+            Checkbox(
+              tristate: true,
+              value: isChecked,
+              onChanged: (value) {
+                setState(() {
+                  isChecked = value!;
+                });
+              },
+            ),
+            CheckboxListTile(
+              title: Text('Clicked'),
+              tristate: true,
+              value: isChecked,
+              onChanged: (value) {
+                setState(() {
+                  isChecked = value!;
+                });
+              },
+            ),
+            Switch(
+              value: isSwitched,
+              onChanged: (value) {
+                setState(() {
+                  isSwitched = value;
+                });
+              },
+            ),
+            SwitchListTile(
+              title: Text('Switched'),
+              value: isSwitched,
+              onChanged: (value) {
+                setState(() {
+                  isSwitched = value;
+                });
+              },
+            ),
+            Slider(
+              max: 10.0,
+              divisions: 2,
+              value: sliderValue,
+              onChanged: (value) {
+                setState(() {
+                  sliderValue = value;
+                });
+              },
+            ),
+            GestureDetector(
+              onTap: () {
+                print('Tapped');
+              },
+              child: Container(
+                width: double.infinity,
+                height: 100,
+                color: Colors.blueAccent,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
