@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_practice/second_basics/data/value_notifier_widget.dart';
+import 'package:flutter_practice/second_basics/presentation/view/widget_tree.dart';
 
 void main() {
   runApp(const MyApp());
@@ -8,11 +10,21 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: MyHomePage(title: 'MyHomePage'),
+    return ValueListenableBuilder(
+      valueListenable: isDarkModeNotifier,
+      builder: (context, isDarkMode, child) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Flutter Demo',
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(
+              seedColor: Colors.deepPurple,
+              brightness: isDarkMode ? Brightness.light : Brightness.dark,
+            ),
+          ),
+          home: WidgetTree(),
+        );
+      },
     );
   }
 }
