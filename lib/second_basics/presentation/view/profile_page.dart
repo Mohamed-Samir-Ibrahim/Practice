@@ -9,7 +9,7 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
   TextEditingController controller = TextEditingController();
-  bool isChecked = false;
+  bool? isChecked = false;
   bool isSwitched = false;
   double sliderValue = 0.0;
   @override
@@ -19,32 +19,36 @@ class _ProfilePageState extends State<ProfilePage> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
+            DropdownButton(
+              items: [DropdownMenuItem(child: Text('Element 1'))],
+              onChanged: (value) {},
+            ),
             TextField(
               controller: controller,
               decoration: InputDecoration(border: OutlineInputBorder()),
               onEditingComplete: () => controller,
             ),
             Text(controller.text),
-            Checkbox(
+            Checkbox.adaptive(
               tristate: true,
               value: isChecked,
-              onChanged: (value) {
+              onChanged: (bool? value) {
                 setState(() {
-                  isChecked = value!;
+                  isChecked = value;
                 });
               },
             ),
-            CheckboxListTile(
+            CheckboxListTile.adaptive(
               title: Text('Clicked'),
               tristate: true,
               value: isChecked,
-              onChanged: (value) {
+              onChanged: (bool? value) {
                 setState(() {
-                  isChecked = value!;
+                  isChecked = value;
                 });
               },
             ),
-            Switch(
+            Switch.adaptive(
               value: isSwitched,
               onChanged: (value) {
                 setState(() {
@@ -52,7 +56,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 });
               },
             ),
-            SwitchListTile(
+            SwitchListTile.adaptive(
               title: Text('Switched'),
               value: isSwitched,
               onChanged: (value) {
