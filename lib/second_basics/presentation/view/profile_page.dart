@@ -26,7 +26,9 @@ class _ProfilePageState extends State<ProfilePage> {
             TextField(
               controller: controller,
               decoration: InputDecoration(border: OutlineInputBorder()),
-              onEditingComplete: () => controller,
+              onEditingComplete: () {
+                setState(() {});
+              },
             ),
             Text(controller.text),
             Checkbox.adaptive(
