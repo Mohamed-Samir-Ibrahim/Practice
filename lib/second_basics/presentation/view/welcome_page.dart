@@ -28,6 +28,7 @@ class _WelcomePageState extends State<WelcomePage> {
             ),
             child: Text('Login'),
           ),
+          SizedBox(height: 30,),
           ElevatedButton(
             onPressed: () =>
                 Navigator.push(context,
