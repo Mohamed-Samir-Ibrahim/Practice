@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_practice/second_basics/data/value_notifier_widget.dart';
-import 'package:flutter_practice/second_basics/presentation/view/widget_tree.dart';
+import 'package:flutter_practice/second_basics/presentation/view/welcome_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
               brightness: isDarkMode ? Brightness.light : Brightness.dark,
             ),
           ),
-          home: WidgetTree(),
+          home: WelcomePage(),
         );
       },
     );

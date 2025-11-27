@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_practice/second_basics/data/value_notifier_widget.dart';
 import 'package:flutter_practice/second_basics/presentation/view/home_page.dart';
 import 'package:flutter_practice/second_basics/presentation/view/profile_page.dart';
+import 'package:flutter_practice/second_basics/presentation/view/setting_page.dart';
 import 'package:flutter_practice/second_basics/presentation/widget/nav_bar_widget.dart';
 
 class WidgetTree extends StatefulWidget {
@@ -22,6 +23,7 @@ class _WidgetTreeState extends State<WidgetTree> {
           appBar: AppBar(
             title: Text('Flutter'),
             centerTitle: true,
+            automaticallyImplyLeading: false,
             actions: [
               IconButton(
                 onPressed: () {
@@ -30,6 +32,15 @@ class _WidgetTreeState extends State<WidgetTree> {
                   });
                 },
                 icon: Icon(isDarkMode ? Icons.light_mode : Icons.dark_mode),
+              ),
+              IconButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SettingPage()),
+                  );
+                },
+                icon: Icon(Icons.settings),
               ),
             ],
           ),
