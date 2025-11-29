@@ -33,7 +33,7 @@ class _WidgetTreeState extends State<WidgetTree> {
                   final SharedPreferences prefs = await SharedPreferences
                       .getInstance();
                   prefs.setBool(
-                      Constants.isThemeModeKey, isDarkModeNotifier.value);
+                      Constants.kThemeModeKey, isDarkModeNotifier.value);
                 },
                 icon: Icon(isDarkMode ? Icons.light_mode : Icons.dark_mode),
               ),

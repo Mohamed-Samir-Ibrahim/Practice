@@ -16,8 +16,7 @@ class HeroWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(10.0),
           color: Colors.teal,
         ),
-        child: Text(
-          title, style: TextStyle(color: Colors.white, fontSize: 30,),),
+        child: Text(title, style: TextStyle(color: Colors.white, fontSize: 30)),
       ),
     );
   }

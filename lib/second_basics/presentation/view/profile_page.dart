@@ -6,16 +6,17 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(20),
-      child: TextButton(
-        onPressed: () =>
-            Navigator.pushAndRemoveUntil(
-              context,
-              MaterialPageRoute(builder: (context) => LoginPage()),
-                  (route) => false,
-            ),
-        child: Text('Logout',),
+    return SingleChildScrollView(
+      child: Padding(
+        padding: EdgeInsets.all(30),
+        child: TextButton(
+          onPressed: () => Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (context) => LoginPage()),
+            (route) => false,
+          ),
+          child: Text('Logout'),
+        ),
       ),
     );
   }

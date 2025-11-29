@@ -14,34 +14,43 @@ class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Lottie.asset('assets/lotties/HiHello.json', width: double.infinity,
-              height: 200),
-          ElevatedButton(
-            onPressed: () =>
-                Navigator.pushAndRemoveUntil(context,
-                  MaterialPageRoute(builder: (context) => LoginPage(),), (
-                      route) => false,),
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.green,
-              foregroundColor: Colors.amber,
-            ),
-            child: Text('Login'),
+      body: Center(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Lottie.asset(
+                'assets/lotties/HiHello.json',
+                width: double.infinity,
+                height: 200,
+              ),
+              ElevatedButton(
+                onPressed: () => Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()),
+                  (route) => false,
+                ),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  foregroundColor: Colors.amber,
+                ),
+                child: Text('Login'),
+              ),
+              SizedBox(height: 30),
+              ElevatedButton(
+                onPressed: () => Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => RegisterPage()),
+                  (route) => false,
+                ),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  foregroundColor: Colors.amber,
+                ),
+                child: Text('Get Started'),
+              ),
+            ],
           ),
-          SizedBox(height: 30,),
-          ElevatedButton(
-            onPressed: () =>
-                Navigator.pushAndRemoveUntil(context,
-                  MaterialPageRoute(builder: (context) => RegisterPage(),), (
-                      route) => false,),
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.green,
-              foregroundColor: Colors.amber,
-            ),
-            child: Text('Get Started'),
-          ),
-        ],
+        ),
       ),
     );
   }

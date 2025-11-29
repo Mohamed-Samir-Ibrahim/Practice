@@ -24,7 +24,7 @@ class _MyAppState extends State<MyApp> {
 
   initPrefsState() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    final result = prefs.getBool(Constants.isThemeModeKey);
+    final result = prefs.getBool(Constants.kThemeModeKey);
     isDarkModeNotifier.value = result ?? false;
   }
 
