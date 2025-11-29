@@ -2,18 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_practice/second_basics/presentation/view/widget_tree.dart';
 import 'package:flutter_practice/second_basics/presentation/widget/hero_widget.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   String emailConfirm = '123';
   String passwordConfirm = '456';
+
   @override
   void initState() {
     // TODO: implement initState
@@ -34,7 +35,7 @@ class _LoginPageState extends State<LoginPage> {
         padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
-            HeroWidget(title: 'Login'),
+            HeroWidget(title: 'Register'),
             SizedBox(height: 20.0),
             TextField(
               controller: emailController,
@@ -76,7 +77,7 @@ class _LoginPageState extends State<LoginPage> {
                 backgroundColor: Colors.green,
                 foregroundColor: Colors.amber,
               ),
-              child: Text('Login'),
+              child: Text('Register'),
             ),
           ],
         ),

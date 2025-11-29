@@ -1,6 +1,6 @@
 {
-    "name": "flutter_practice",
-    "short_name": "flutter_practice",
+  "name": "Practice",
+  "short_name": "Practice",
     "start_url": ".",
     "display": "standalone",
   "background_color": "#hexcode",

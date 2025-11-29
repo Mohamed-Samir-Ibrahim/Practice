@@ -10,9 +10,10 @@ class ProfilePage extends StatelessWidget {
       padding: EdgeInsets.all(20),
       child: TextButton(
         onPressed: () =>
-            Navigator.pushReplacement(
+            Navigator.pushAndRemoveUntil(
               context,
               MaterialPageRoute(builder: (context) => LoginPage()),
+                  (route) => false,
             ),
         child: Text('Logout',),
       ),

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_practice/second_basics/core/constants.dart';
 import 'package:flutter_practice/second_basics/data/value_notifier_widget.dart';
 import 'package:flutter_practice/second_basics/presentation/view/home_page.dart';
 import 'package:flutter_practice/second_basics/presentation/view/profile_page.dart';
 import 'package:flutter_practice/second_basics/presentation/view/setting_page.dart';
 import 'package:flutter_practice/second_basics/presentation/widget/nav_bar_widget.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class WidgetTree extends StatefulWidget {
   const WidgetTree({super.key});
@@ -26,10 +28,12 @@ class _WidgetTreeState extends State<WidgetTree> {
             automaticallyImplyLeading: false,
             actions: [
               IconButton(
-                onPressed: () {
-                  setState(() {
-                    isDarkModeNotifier.value = !isDarkModeNotifier.value;
-                  });
+                onPressed: () async {
+                  isDarkModeNotifier.value = !isDarkModeNotifier.value;
+                  final SharedPreferences prefs = await SharedPreferences
+                      .getInstance();
+                  prefs.setBool(
+                      Constants.isThemeModeKey, isDarkModeNotifier.value);
                 },
                 icon: Icon(isDarkMode ? Icons.light_mode : Icons.dark_mode),
               ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_practice/second_basics/presentation/view/login_page.dart';
-import 'package:flutter_practice/second_basics/presentation/view/widget_tree.dart';
+import 'package:flutter_practice/second_basics/presentation/view/register_page.dart';
 import 'package:lottie/lottie.dart';
 
 class WelcomePage extends StatefulWidget {
@@ -20,8 +20,9 @@ class _WelcomePageState extends State<WelcomePage> {
               height: 200),
           ElevatedButton(
             onPressed: () =>
-                Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => LoginPage(),),),
+                Navigator.pushAndRemoveUntil(context,
+                  MaterialPageRoute(builder: (context) => LoginPage(),), (
+                      route) => false,),
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.green,
               foregroundColor: Colors.amber,
@@ -31,8 +32,9 @@ class _WelcomePageState extends State<WelcomePage> {
           SizedBox(height: 30,),
           ElevatedButton(
             onPressed: () =>
-                Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => WidgetTree(),),),
+                Navigator.pushAndRemoveUntil(context,
+                  MaterialPageRoute(builder: (context) => RegisterPage(),), (
+                      route) => false,),
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.green,
               foregroundColor: Colors.amber,
