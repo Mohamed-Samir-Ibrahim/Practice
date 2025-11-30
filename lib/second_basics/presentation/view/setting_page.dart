@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_practice/second_basics/presentation/view/expanded_flexible_widget.dart';
 
 class SettingPage extends StatefulWidget {
   const SettingPage({super.key});
@@ -147,12 +148,17 @@ class _SettingPageState extends State<SettingPage> {
                   ),
                 ),
                 ElevatedButton(
-                  onPressed: () => print('ElevatedButton'),
+                  onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ExpandedFlexibleWidget(),
+                    ),
+                  ),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.green,
                     foregroundColor: Colors.amber,
                   ),
-                  child: Text('Click Me'),
+                  child: Text('Expanded and Flexible'),
                 ),
                 FilledButton(
                   onPressed: () => print('FilledButton'),
