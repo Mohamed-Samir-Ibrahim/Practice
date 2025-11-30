@@ -12,7 +12,6 @@ class Styles {
   );
   static const TextStyle kDescription = TextStyle(
     fontSize: 10,
-    color: Colors.black,
     fontWeight: FontWeight.w700,
   );
 }

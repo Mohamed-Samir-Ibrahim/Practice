@@ -11,13 +11,13 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+  TextEditingController emailController = TextEditingController(text: '123',);
+  TextEditingController passwordController = TextEditingController(
+    text: '456',);
   String emailConfirm = '123';
   String passwordConfirm = '456';
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
   }
 
