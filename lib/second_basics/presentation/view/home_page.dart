@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
             padding: EdgeInsets.all(20.0),
             child: Column(
               children: [
-                HeroWidget(title: 'Home'),
+                AspectRatio(aspectRatio: 14, child: HeroWidget(title: 'Home')),
                 SizedBox(height: 15),
                 ...List.generate(
                   contentsList.length,

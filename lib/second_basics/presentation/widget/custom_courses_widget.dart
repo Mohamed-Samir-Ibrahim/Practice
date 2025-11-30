@@ -21,12 +21,14 @@ class CustomCoursesWidget extends StatelessWidget {
           width: double.infinity,
           height: 70,
           margin: EdgeInsets.all(10.0),
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.0,),
-            border: Border.all(
-              color: isDarkMode ? Colors.black : Colors.white,),),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10.0),
+            border: Border.all(color: isDarkMode ? Colors.black : Colors.white),
+          ),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
+              crossAxisAlignment: .start,
               children: [
                 Text(content, style: Styles.kContent),
                 SizedBox(height: 10),
