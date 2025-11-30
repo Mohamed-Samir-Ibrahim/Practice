@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_practice/second_basics/presentation/view/activity_page.dart';
 import 'package:flutter_practice/second_basics/presentation/widget/custom_courses_widget.dart';
 import 'package:flutter_practice/second_basics/presentation/widget/hero_widget.dart';
 
@@ -20,7 +21,16 @@ class _HomePageState extends State<HomePage> {
             padding: EdgeInsets.all(20.0),
             child: Column(
               children: [
-                AspectRatio(aspectRatio: 14, child: HeroWidget(title: 'Home')),
+                AspectRatio(
+                  aspectRatio: 14,
+                  child: GestureDetector(
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ActivityPage()),
+                    ),
+                    child: HeroWidget(title: 'Home'),
+                  ),
+                ),
                 SizedBox(height: 15),
                 ...List.generate(
                   contentsList.length,

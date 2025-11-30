@@ -1,9 +1,9 @@
 class ActivityModel {
   final String activity;
-  final num availability;
+  final double availability;
   final String type;
-  final num participants;
-  final num price;
+  final int participants;
+  final double price;
   final String accessibility;
   final String duration;
   final bool kidFriendly;
@@ -25,16 +25,16 @@ class ActivityModel {
 
   factory ActivityModel.fromJson(Map<String, dynamic> json) {
     return ActivityModel(
-      activity: json['activity'],
-      availability: json['availability'],
-      type: json['type'],
-      participants: json['participants'],
-      price: json['price'],
-      accessibility: json['accessibility'],
-      duration: json['duration'],
-      kidFriendly: json['kidFriendly'],
-      link: json['link'],
-      key: json['key'],
+      activity: json['activity'] as String,
+      availability: (json['availability'] as num).toDouble(),
+      type: json['type'] as String,
+      participants: json['participants'] as int,
+      price: (json['price'] as num).toDouble(),
+      accessibility: json['accessibility'] as String,
+      duration: json['duration'] as String,
+      kidFriendly: json['kidFriendly'] as bool,
+      link: json['link'] as String,
+      key: json['key'] as String,
     );
   }
 }
