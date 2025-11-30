@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               children: [
                 AspectRatio(
-                  aspectRatio: 14,
+                  aspectRatio: 4,
                   child: GestureDetector(
                     onTap: () => Navigator.push(
                       context,
